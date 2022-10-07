@@ -10,6 +10,9 @@
 - APP_REPO: Link para este repositório
 - APP_TEMPLATE: Link para o repositório do template
 - TSE_API: Link para o JSON do TSE
+- APP_GTAG: Tag do Google Analytics. Exemplo: G-XXXXX99999
+- APP_TIME_TO_UPDATE_INFO: Tempo para atualizar as informações da votação. Exemplo: 5000 (5 segundos)
+- APP_META_*: S
 
 ##### JSON do TSE
 
