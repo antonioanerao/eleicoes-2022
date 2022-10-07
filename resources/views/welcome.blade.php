@@ -3,11 +3,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Eleições 2022 - Segundo Turno" />
-    <meta name="author" content="" />
-    <title>Eleições 2022 - Segundo Turno</title>
+    <meta name="description" content="{{ env('APP_META_DESCRIPTION') }}" />
+    <meta name="author" content="{{ env('APP_META_AUTHOR') }}" />
+    <title>{{ env('APP_META_TITLE') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
+
+    @if(env('APP_ENV') == 'production')
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('APP_GTAG') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ env('APP_GTAG') }}');
+        </script>
+    @endif
 </head>
 <body class="d-flex flex-column h-100">
 <main class="flex-shrink-0">
@@ -74,7 +85,7 @@
                         <img
                             class="card-img-top"
                             src="{{ asset('images/lula.webp') }}"
-                            alt="Lula 13"
+                            alt="{{ $candidatos[0]['nm'] }}"
                         />
                         <div class="card-body p-4">
                             <div class="badge bg-danger bg-gradient rounded-pill mb-2">PT</div>
@@ -97,7 +108,7 @@
                         <img
                             class="card-img-top"
                             src="{{ asset('images/bolsonaro.jpg') }}"
-                            alt="Bolsonaro 22"
+                            alt="{{ $candidatos[1]['nm'] }}"
                         />
                         <div class="card-body p-4">
                             <div class="badge bg-primary bg-gradient rounded-pill mb-2">PL</div>
@@ -187,7 +198,7 @@
                     console.log(err)
                 }
             })
-        }, 5000);
+        }, {{ env('APP_TIME_TO_UPDATE_INFO') }});
     });
 </script>
 </body>
