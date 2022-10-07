@@ -12,7 +12,7 @@
 - TSE_API: Link para o JSON do TSE
 - APP_GTAG: Tag do Google Analytics. Exemplo: G-XXXXX99999
 - APP_TIME_TO_UPDATE_INFO: Tempo para atualizar as informações da votação. Exemplo: 5000 (5 segundos)
-- APP_META_*: S
+- APP_META_*: Informações meta do site, como title, description e author
 
 ##### JSON do TSE
 
