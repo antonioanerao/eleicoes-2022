@@ -95,7 +95,7 @@
                             </p>
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <b><span id="lulaPvap">{{ $candidatos[1]['pvap'] }}</span>
+                                    <b><span id="lulaPvap">{{ $candidatos[0]['pvap'] }}</span>
                                         <i class="bi-percent"></i></b> <br>
                                     <span id="lulaVap">{{ $votosLula }}</span> votos
                                 </div>
@@ -119,7 +119,7 @@
                             </p>
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <b><span id="bolsonaroPvap">{{ $candidatos[0]['pvap'] }}</span>
+                                    <b><span id="bolsonaroPvap">{{ $candidatos[1]['pvap'] }}</span>
                                         <i class="bi-percent"></i></b> <br>
                                     <span id="bolsonaroVap">{{ $votosBolsonaro }}</span> votos
                                 </div>
