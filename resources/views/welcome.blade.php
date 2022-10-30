@@ -85,17 +85,17 @@
                         <img
                             class="card-img-top"
                             src="{{ asset('images/lula.webp') }}"
-                            alt="{{ $candidatos[0]['nm'] }}"
+                            alt="{{ $candidatos[1]['nm'] }}"
                         />
                         <div class="card-body p-4">
                             <div class="badge bg-danger bg-gradient rounded-pill mb-2">PT</div>
-                            <h5 class="card-title mb-1">{{ $candidatos[0]['nm'] }}</h5>
+                            <h5 class="card-title mb-1">{{ $candidatos[1]['nm'] }}</h5>
                             <p class="card-text">
-                                Vice: {{ $candidatos[0]['nv'] }}
+                                Vice: {{ $candidatos[1]['nv'] }}
                             </p>
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <b><span id="lulaPvap">{{ $candidatos[0]['pvap'] }}</span>
+                                    <b><span id="lulaPvap">{{ $candidatos[1]['pvap'] }}</span>
                                         <i class="bi-percent"></i></b> <br>
                                 </div>
                             </div>
@@ -108,17 +108,17 @@
                         <img
                             class="card-img-top"
                             src="{{ asset('images/bolsonaro.jpg') }}"
-                            alt="{{ $candidatos[1]['nm'] }}"
+                            alt="{{ $candidatos[0]['nm'] }}"
                         />
                         <div class="card-body p-4">
                             <div class="badge bg-primary bg-gradient rounded-pill mb-2">PL</div>
-                            <h5 class="card-title mb-1">{{ $candidatos[1]['nm'] }}</h5>
+                            <h5 class="card-title mb-1">{{ $candidatos[0]['nm'] }}</h5>
                             <p class="card-text">
-                                Vice: {{ $candidatos[1]['nv'] }}
+                                Vice: {{ $candidatos[0]['nv'] }}
                             </p>
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <b><span id="bolsonaroPvap">{{ $candidatos[1]['pvap'] }}</span>
+                                    <b><span id="bolsonaroPvap">{{ $candidatos[0]['pvap'] }}</span>
                                         <i class="bi-percent"></i></b> <br>
                                 </div>
                             </div>
@@ -162,8 +162,8 @@
                 dataType:'json',
                 success:function(response) {
                     if(response.cand.length > 0) {
-                        var lula = response.cand[0];
-                        var bolsonaro = response.cand[1];
+                        var lula = response.cand[1];
+                        var bolsonaro = response.cand[0];
                     }
 
                     $('#lulaPvap').empty();
