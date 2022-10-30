@@ -11,8 +11,8 @@ class HomeController extends Controller
         $candidatos = $response['cand'];
         $urnasApuradas = $response['pst'];
 
-        $votosBolsonaro = number_format($candidatos[0]['vap']);
-        $votosLula = number_format($candidatos[1]['vap']);
+        $votosBolsonaro = number_format($candidatos[1]['vap']);
+        $votosLula = number_format($candidatos[0]['vap']);
 
         $votosBolsonaro = str_replace(',', '.', $votosBolsonaro);
         $votosLula = str_replace(',', '.', $votosLula);
