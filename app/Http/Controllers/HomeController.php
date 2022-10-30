@@ -11,6 +11,14 @@ class HomeController extends Controller
         $candidatos = $response['cand'];
         $urnasApuradas = $response['pst'];
 
-        return view('welcome', compact('candidatos', 'urnasApuradas'));
+        $votosBolsonaro = number_format($candidatos[0]['vap']);
+        $votosLula = number_format($candidatos[1]['vap']);
+
+        $votosBolsonaro = str_replace(',', '.', $votosBolsonaro);
+        $votosLula = str_replace(',', '.', $votosLula);
+
+        return view('welcome',
+            compact('candidatos', 'urnasApuradas', 'votosBolsonaro', 'votosLula')
+        );
     }
 }

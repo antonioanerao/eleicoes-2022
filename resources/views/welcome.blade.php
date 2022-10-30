@@ -97,6 +97,7 @@
                                 <div class="card-body text-center">
                                     <b><span id="lulaPvap">{{ $candidatos[1]['pvap'] }}</span>
                                         <i class="bi-percent"></i></b> <br>
+                                    <span id="lulaVap">{{ $votosLula }}</span> votos
                                 </div>
                             </div>
                         </div>
@@ -120,6 +121,7 @@
                                 <div class="card-body text-center">
                                     <b><span id="bolsonaroPvap">{{ $candidatos[0]['pvap'] }}</span>
                                         <i class="bi-percent"></i></b> <br>
+                                    <span id="bolsonaroVap">{{ $votosBolsonaro }}</span> votos
                                 </div>
                             </div>
                         </div>
@@ -183,8 +185,14 @@
                     $('#lulaPvap').empty();
                     $('#lulaPvap').append(lula.pvap);
 
+                    $('#lulaVap').empty();
+                    $('#lulaVap').append(new Intl.NumberFormat('pt-BR').format(lula.vap));
+
                     $('#bolsonaroPvap').empty();
                     $('#bolsonaroPvap').append(bolsonaro.pvap);
+
+                    $('#bolsonaroVap').empty();
+                    $('#bolsonaroVap').append(new Intl.NumberFormat('pt-BR').format(bolsonaro.vap));
 
                     if((parseFloat(lula.pvap) > parseFloat(bolsonaro.pvap) && (show === true))) {
                         show = false;
