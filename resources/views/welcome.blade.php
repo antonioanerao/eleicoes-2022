@@ -126,6 +126,17 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-8 offset-2">
+                    <div class="alert alert-info text-center">
+                        <h3>
+                            <span id="urnasApuradas">{{ $urnasApuradas }}</span>% das urnas apuradas
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 </main>
@@ -165,6 +176,9 @@
                         var lula = response.cand[1];
                         var bolsonaro = response.cand[0];
                     }
+
+                    $('#urnasApuradas').empty();
+                    $('#urnasApuradas').append(response.pst);
 
                     $('#lulaPvap').empty();
                     $('#lulaPvap').append(lula.pvap);
